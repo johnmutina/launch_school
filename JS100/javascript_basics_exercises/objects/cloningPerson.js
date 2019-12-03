@@ -9,6 +9,7 @@ let person = {
 };
 
 clonedPerson = clone(person);
+console.log(clonedPerson);
 person.age = 34;
 
 console.log(person.age); // 34
