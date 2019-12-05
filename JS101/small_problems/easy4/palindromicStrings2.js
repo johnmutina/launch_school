@@ -1,0 +1,44 @@
+// // INPUT
+// - 1 string
+
+// // OUTPUT
+// - boolean
+
+// // RULES
+// - case insensitive
+// - delete all non-alphanumeric characters
+
+// // TEST CASES
+// isRealPalindrome('madam'); // true
+// isRealPalindrome('Madam'); // true (case does not matter)
+// isRealPalindrome("Madam, I'm Adam"); // true (only alphanumerics matter)
+// isRealPalindrome('356653'); // true
+// isRealPalindrome('356a653'); // true
+// isRealPalindrome('123ab321'); // false
+
+// // QUESTIONS
+
+// // ALGORITHM
+
+// ###############################################
+
+function isPalindrome(string) {
+  return (
+    string ===
+    string
+      .split('')
+      .reverse()
+      .join('')
+  );
+}
+
+function isRealPalindrome(str) {
+  return isPalindrome(str.replace(/\W/g, '').toLowerCase());
+}
+
+console.log(isRealPalindrome('madam')); // true
+console.log(isRealPalindrome('Madam')); // true (case does not matter)
+console.log(isRealPalindrome("Madam, I'm Adam")); // true (only alphanumerics matter)
+console.log(isRealPalindrome('356653')); // true
+console.log(isRealPalindrome('356a653')); // true
+console.log(isRealPalindrome('123ab321')); // false
