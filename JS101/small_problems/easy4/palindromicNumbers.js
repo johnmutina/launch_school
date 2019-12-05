@@ -21,9 +21,11 @@
 // ###############################################
 
 function isPalindromicNumber(num) {
+  let cleanNum = num.toString(8);
+
   return (
-    num.toString() ===
-    num
+    cleanNum.toString() ===
+    cleanNum
       .toString()
       .split('')
       .reverse()
@@ -31,7 +33,7 @@ function isPalindromicNumber(num) {
   );
 }
 
-console.log(isPalindromicNumber(34543)); // true
+console.log(isPalindromicNumber(00034543)); // true
 console.log(isPalindromicNumber(123210)); // false
-console.log(isPalindromicNumber(22)); // true
-console.log(isPalindromicNumber(5)); // true
+console.log(isPalindromicNumber(0022)); // true
+console.log(isPalindromicNumber(005)); // true
