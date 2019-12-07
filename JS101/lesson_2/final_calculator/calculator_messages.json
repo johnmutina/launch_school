@@ -1,0 +1,24 @@
+{
+  "en": {
+    "welcome": "Welcome to JSCalc!",
+    "firstNum": "What's the first number? ",
+    "secondNum": "What's the second number? ",
+    "invalidNum": "Hmm.. that doesn't look like a valid number.",
+    "chooseOperation": "What operation would you like to perform?\n1) Add 2) Subtract 3) Multiply 4) Divide",
+    "operationError": "Must choose 1, 2, 3, or 4",
+    "againMessage": "Do you want to perform another calculation? (Y/n)",
+    "againError": "Sorry, I don't understand. Use 'Y' or 'n'",
+    "closeProgram": "Thank you for using JSCalc. Goodbye now!"
+  },
+  "it": {
+    "welcome": "Benvenuto in JSCalc!",
+    "firstNum": "Qual è il primo numero? ",
+    "secondNum": "Qual è il secondo numero? ",
+    "invalidNum": "Hmm.. non sembra essere un numero valido.",
+    "chooseOperation": "Che operazione vuoi eseguire?\n1) Addizione 2) Sottrazione 3) Moltiplicazione 4) Divisione",
+    "operationError": "Devi scegliere fra 1, 2, 3 o 4",
+    "againMessage": "Vuoi eseguire un'altra operazione? (Y/n)",
+    "againError": "Scusa, non ho capito bene. Usa 'Y' per continuare o 'n' per chiudere",
+    "closeProgram": "Grazie per aver usato JSCalc. A presto!"
+  }
+}
