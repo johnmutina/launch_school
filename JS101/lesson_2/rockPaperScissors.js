@@ -56,10 +56,15 @@ function pickWinner(human, computer) {
   }
 }
 
+// returns each string without the parenthesis
 function choiceCleaner(choices) {
   return choices.map(word => word.replace(/[()]/g, ''));
 }
 
+/*
+checks if user inputs the abbreviated form, the complete form or an invalid input
+and returns either the complete choice string or undefined
+*/
 function choiceGetter() {
   let input = readline.question();
   if (input.length <= 2 && MAP_ABBREVIATIONS[input]) {
