@@ -56,20 +56,23 @@ function pickWinner(human, computer) {
   }
 }
 
-// returns each string without the parenthesis
-function choiceCleaner(choices) {
+function removeAllParentheses(choices) {
   return choices.map(word => word.replace(/[()]/g, ''));
 }
 
+function clearScreen() {
+  process.stdout.write('\x1Bc');
+}
+
 /*
-checks if user inputs the abbreviated form, the complete form or an invalid input
+checks if user inputs short form, complete form or an invalid input
 and returns either the complete choice string or undefined
 */
-function choiceGetter() {
-  let input = readline.question();
+function handlePlayerChoice() {
+  let input = readline.question().toLowerCase();
   if (input.length <= 2 && MAP_ABBREVIATIONS[input]) {
     return MAP_ABBREVIATIONS[input];
-  } else if (choiceCleaner(VALID_CHOICES).includes(input)) {
+  } else if (removeAllParentheses(VALID_CHOICES).includes(input)) {
     return input;
   } else {
     return undefined;
@@ -83,18 +86,20 @@ while (playAgain) {
   let computerScore = 0;
 
   while (humanScore < 5 && computerScore < 5) {
-    let validChoicesClean = choiceCleaner(VALID_CHOICES);
+    let validChoicesClean = removeAllParentheses(VALID_CHOICES);
 
     prompt(`Choose one: ${VALID_CHOICES.join(', ')}`);
-    let choice = choiceGetter();
+    let choice = handlePlayerChoice();
 
     while (!validChoicesClean.includes(choice) && !choice) {
       prompt("That's not a valid choice. Try again, please.");
-      choice = choiceGetter();
+      choice = handlePlayerChoice();
     }
 
     let randomIdx = Math.floor(Math.random() * validChoicesClean.length);
     let computerChoice = validChoicesClean[randomIdx];
+
+    clearScreen();
 
     prompt(`You chose ${choice}, computer chose ${computerChoice}`);
 
@@ -130,6 +135,7 @@ while (playAgain) {
     computerScore = 0;
     humanScore = 0;
     playAgain = true;
+    clearScreen();
   } else {
     playAgain = false;
   }
